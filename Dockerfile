@@ -33,9 +33,17 @@ RUN chmod +x /usr/bin/run_with_env.sh
 
 WORKDIR /var/log/genieacs
 
-EXPOSE 7547    # CWMP/TR-069
-EXPOSE 7557    # NBI (Northbound API)
-EXPOSE 7567    # FS (File storage)
-EXPOSE 3000    # UI (Web frontend)
+# GenieACS components ports
+# CWMP / TR-069
+EXPOSE 7547
+
+# NBI (Northbound API)
+EXPOSE 7557
+
+# FS (File storage)
+EXPOSE 7567
+
+# UI (Web frontend)
+EXPOSE 3000
 
 CMD ["/usr/bin/supervisord","-c","/etc/supervisor/conf.d/supervisord.conf"]
